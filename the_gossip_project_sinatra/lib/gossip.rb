@@ -1,6 +1,6 @@
 class Gossip
   
-  attr_accessor :@author , :@content
+  attr_accessor :author , :content
 
   def initialize (author , content )
     @author = author
@@ -11,7 +11,7 @@ class Gossip
 
   def save
     CSV.open("./lib/db/gossip.csv", "ab") do |csv|
-      csv << ["#{@author}", "#{@content}"]
+      csv << ["#{@author} , #{@content}"]
     end
   end
   
